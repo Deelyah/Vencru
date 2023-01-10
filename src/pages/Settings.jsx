@@ -45,9 +45,14 @@ const Settings = () => {
                     >
                       <button
                         type="button"
+                        onClick={() => {
+                          console.log(options.length - 1);
+                        }}
                         className={`${
-                          index == 0 ? "border-l-none" : "border-l"
-                        } text-sm py-2.5 px-4 text-center whitespace-nowrap font-medium bg-white`}
+                          index == 0 ? "border-l-none rounded-md" : "border-l"
+                        } ${
+                          index == options.length - 1 ? "rounded-r-md " : ""
+                        } hover:bg-[#F9FAFB] text-sm py-2.5 px-4 text-center whitespace-nowrap font-medium bg-white`}
                       >
                         {option.name}
                       </button>
