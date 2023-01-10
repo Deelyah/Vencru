@@ -30,7 +30,7 @@ const BaseNavigationMenu = ({ height, onClick }) => {
   const currentPath = location.pathname;
   return (
     <nav className="px-6 bg-white">
-      <div className="flex items-center pl-2 mb-6 py-4 md:py-8" id="logo">
+      <div className="flex items-center pl-2 mb-6 pt-4 md:pt-8" id="logo">
         <img src={logo} alt="logo" className="mr-2.5" />
         <img src={logoTitle} alt="company name" />
       </div>
@@ -70,7 +70,7 @@ const BaseNavigationMenu = ({ height, onClick }) => {
           <ul className="mb-5">
             {bottomLinks.map((link, index) => {
               return (
-                <li key={index}>
+                <li key={index} onClick={onClick}>
                   <Link
                     to={`/${link.page.toLowerCase()}`}
                     className={`${

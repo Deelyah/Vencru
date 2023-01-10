@@ -7,9 +7,9 @@ import { useState } from "react";
 const TheHeader = () => {
   const [sideMenuIsVisible, setSideMenuIsVisible] = useState(false);
   return (
-    <div className="relative md:hidden">
-      <header className="fixed left-0 right-0">
-        <div className="flex items-center pl-4 pr-3 py-4">
+    <div className="relative md:hidden max-w-full">
+      <header className="w-full fixed left-0 right-0">
+        <div className="flex items-center pl-4 pr-3 py-4 bg-white">
           <div className="flex items-center" id="logo">
             <img src={logo} alt="logo" className="mr-2.5" />
             <img src={logoTitle} alt="company name" />
