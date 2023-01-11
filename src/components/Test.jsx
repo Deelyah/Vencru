@@ -1,12 +1,9 @@
-import BaseRadioButton from "./base-components/BaseRadioButton";
+import BaseCardDetails from "./base-components/BaseCardDetails";
 
 const Test = () => {
   return (
-    <div className="pt-20">
-      Hello
-      <BaseRadioButton />
-      <BaseRadioButton />
-      <BaseRadioButton />
+    <div className="p-20">
+      <BaseCardDetails />
     </div>
   );
 };

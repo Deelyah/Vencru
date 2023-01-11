@@ -70,11 +70,15 @@ const BaseNavigationMenu = ({ height, onClick }) => {
           <ul className="mb-5">
             {bottomLinks.map((link, index) => {
               return (
-                <li key={index} onClick={onClick}>
+                <li
+                  key={index}
+                  className="mb-1 hover:bg-[#F9FAFB] rounded-md"
+                  onClick={onClick}
+                >
                   <Link
                     to={`/${link.page.toLowerCase()}`}
                     className={`${
-                      currentPath === `/${link.page.toLowerCase()}`
+                      currentPath.includes(`/${link.page.toLowerCase()}`)
                         ? "bg-[#F9FAFB]"
                         : "bg-transparent"
                     } pl-3 flex items-center py-2 rounded-md`}
