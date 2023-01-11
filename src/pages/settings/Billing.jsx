@@ -145,7 +145,7 @@ const Billing = () => {
           <table className="w-full">
             <thead>
               <tr className="w-full bg-[#F2F4F7] border-b rounded-t-lg ">
-                <th className="py-3 text-[#667085] text-xs font-medium text-left md:w-7/12 pl-6 flex items-center">
+                <th className="py-3 text-[#667085] text-xs font-medium text-left w-7/12 pl-6 flex items-center">
                   <input type="checkbox" name="" value="" className="mr-3" />
                   Invoice
                 </th>
@@ -168,7 +168,7 @@ const Billing = () => {
               {tableData.map((data, index) => {
                 return (
                   <tr className="w-full border-b" key={index}>
-                    <td className="text-sm text-[#101828] font-medium py-6 md:w-7/12 pl-6 flex items-center">
+                    <td className="text-sm text-[#101828] font-medium py-6 w-7/12 pl-6 flex items-center">
                       <input
                         type="checkbox"
                         name=""
