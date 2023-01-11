@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const Settings = () => {
   const location = useLocation();
-  const pathname = location.pathname;
+  const [pathname, setPathname] = useState("");
+  useEffect(() => {
+    setPathname(location.pathname);
+  }, [location]);
   const options = [
     { name: "My details", id: 0, path: "my-details" },
     { name: "Profile", id: 1 },
@@ -46,12 +49,16 @@ const Settings = () => {
                       <button
                         type="button"
                         onClick={() => {
-                          console.log(options.length - 1);
+                          console.log(pathname, option.name.toLowerCase());
                         }}
                         className={`${
                           index == 0 ? "border-l-none rounded-md" : "border-l"
                         } ${
                           index == options.length - 1 ? "rounded-r-md " : ""
+                        } ${
+                          pathname.includes(option.name.toLowerCase())
+                            ? "bg-[#F9FAFB]"
+                            : "bg-white"
                         } hover:bg-[#F9FAFB] text-sm py-2.5 px-4 text-center whitespace-nowrap font-medium bg-white`}
                       >
                         {option.name}

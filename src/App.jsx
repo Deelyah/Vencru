@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/test" element={<Test />}></Route>
           <Route path="/" element={<Overview />}>
-            <Route index element={<Navigate to="/home" replace />} />
+            <Route index element={<Navigate to="/settings" replace />} />
             <Route path="home" element={<Home />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="projects" element={<Projects />} />
@@ -35,7 +35,7 @@ function App() {
             <Route path="settings/*" element={<Settings />}>
               <Route
                 index
-                element={<Navigate to="/settings/my-details" replace />}
+                element={<Navigate to="/settings/billing" replace />}
               />
               <Route path="my-details" element={<Details />} />
               <Route path="profile" element={<Profile />} />

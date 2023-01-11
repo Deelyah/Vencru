@@ -3,11 +3,16 @@ import mail from "../../assets/mail.svg";
 import BaseCardDetails from "../../components/base-components/BaseCardDetails";
 import masterCard from "../../assets/mastercard.svg";
 import visaCard from "../../assets/visa-card.svg";
+import { useState } from "react";
 const Billing = () => {
   const cardDetails = [
     { icon: masterCard, expiry: "06/2023", type: "Mastercard" },
     { icon: visaCard, expiry: "06/2023", type: "Visa" },
   ];
+  const [isChecked, setIsChecked] = useState(false);
+  const checkStatus = (status) => {
+    setIsChecked(status);
+  };
   return (
     <div className="">
       <div className="pb-5 border-b mb-6">
@@ -40,7 +45,7 @@ const Billing = () => {
             <div className="mr-2">
               <BaseRadioButton />
             </div>
-            <div className="w-full md:w-1/2 ">
+            <div className="w-full md:w-2/3 lg:w-1/2">
               <h5 className="mb-3 text-sm font-medium text-[#344054]">
                 Send to an alternative email
               </h5>
@@ -62,27 +67,11 @@ const Billing = () => {
           {cardDetails.map((card, index) => {
             return (
               <div key={index} className="mb-3">
-                <BaseCardDetails>
-                  <div className="flex">
-                    <div>
-                      <img src={card.icon} alt={card.type} />
-                    </div>
-                    <div className="ml-3">
-                      <h5 className="text-[#344054] text-sm">
-                        {card.type} ending in 1234
-                      </h5>
-                      <p className="text-left text-sm text-[#667085]">
-                        Expiry {card.expiry}
-                      </p>
-                      <div className="flex mt-2 text-sm">
-                        <p className="mr-3 text-[#667085] font-medium">
-                          Set as default
-                        </p>
-                        <p className="text-[#6941C6] font-medium">Edit</p>
-                      </div>
-                    </div>
-                  </div>
-                </BaseCardDetails>
+                <BaseCardDetails
+                  icon={card.icon}
+                  type={card.type}
+                  expiry={card.expiry}
+                ></BaseCardDetails>
               </div>
             );
           })}
