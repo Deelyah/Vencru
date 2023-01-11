@@ -10,7 +10,7 @@ const BaseCardDetails = ({ icon, type, expiry }) => {
       }}
       className={`${
         isChecked ? "bg-[#d6bbfb28] border-[#7F56D9]" : "bg-white"
-      } relative bg-white w-full rounded-xl p-4 border flex`}
+      } cursor-pointer relative bg-white w-full rounded-xl p-4 border flex`}
     >
       <div className="flex">
         <div>

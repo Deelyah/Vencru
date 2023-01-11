@@ -3,16 +3,13 @@ import mail from "../../assets/mail.svg";
 import BaseCardDetails from "../../components/base-components/BaseCardDetails";
 import masterCard from "../../assets/mastercard.svg";
 import visaCard from "../../assets/visa-card.svg";
-import { useState } from "react";
+import plus from "../../assets/plus.svg";
 const Billing = () => {
   const cardDetails = [
     { icon: masterCard, expiry: "06/2023", type: "Mastercard" },
     { icon: visaCard, expiry: "06/2023", type: "Visa" },
   ];
-  const [isChecked, setIsChecked] = useState(false);
-  const checkStatus = (status) => {
-    setIsChecked(status);
-  };
+
   return (
     <div className="">
       <div className="pb-5 border-b mb-6">
@@ -75,6 +72,14 @@ const Billing = () => {
               </div>
             );
           })}
+          <div className="flex">
+            <div>
+              <img src={plus} alt="" />
+            </div>
+            <p className="ml-2 text-[#667085] hover:text-[#4a556b] hover:cursor-pointer font-medium text-sm">
+              Add new payment method
+            </p>
+          </div>
         </div>
       </div>
     </div>

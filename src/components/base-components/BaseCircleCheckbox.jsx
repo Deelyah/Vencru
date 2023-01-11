@@ -4,7 +4,6 @@ const BaseCircleCheckbox = ({ status }) => {
   const [isChecked, setIsChecked] = useState(false);
   useEffect(() => {
     setIsChecked(status);
-    console.log(status);
   }, [status]);
   return (
     <div className="flex items-center w-full">
