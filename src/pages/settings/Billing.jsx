@@ -4,10 +4,56 @@ import BaseCardDetails from "../../components/base-components/BaseCardDetails";
 import masterCard from "../../assets/mastercard.svg";
 import visaCard from "../../assets/visa-card.svg";
 import plus from "../../assets/plus.svg";
+import download from "../../assets/download.svg";
+import paid from "../../assets/status.svg";
+import users from "../../assets/users.svg";
 const Billing = () => {
   const cardDetails = [
     { icon: masterCard, expiry: "06/2023", type: "Mastercard" },
     { icon: visaCard, expiry: "06/2023", type: "Visa" },
+  ];
+
+  const tableData = [
+    {
+      invoice: "Dec 2022",
+      amount: "USD $10.00",
+      date: "Dec 1, 2022",
+      status: paid,
+      users: users,
+      downloadIcon: download,
+    },
+    {
+      invoice: "Dec 2022",
+      amount: "USD $10.00",
+      date: "Dec 1, 2022",
+      status: paid,
+      users: users,
+      downloadIcon: download,
+    },
+    {
+      invoice: "Dec 2022",
+      amount: "USD $10.00",
+      date: "Dec 1, 2022",
+      status: paid,
+      users: users,
+      downloadIcon: download,
+    },
+    {
+      invoice: "Dec 2022",
+      amount: "USD $10.00",
+      date: "Dec 1, 2022",
+      status: paid,
+      users: users,
+      downloadIcon: download,
+    },
+    {
+      invoice: "Dec 2022",
+      amount: "USD $10.00",
+      date: "Dec 1, 2022",
+      status: paid,
+      users: users,
+      downloadIcon: download,
+    },
   ];
 
   return (
@@ -18,7 +64,7 @@ const Billing = () => {
           Update your billing details and address.
         </p>
       </div>
-      <div
+      <section
         className="mb-5 pb-5 flex flex-col md:flex-row border-b"
         id="contactEmail"
       >
@@ -53,9 +99,9 @@ const Billing = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col md:flex-row">
+      <section className="flex flex-col md:flex-row">
         <div className="text-sm mb-5 w-full md:w-1/4">
           <h4 className="text-sm font-medium text-[#344054]">Card Details</h4>
           <p className="text-[#667085]">Select default payment method.</p>
@@ -81,7 +127,57 @@ const Billing = () => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="pt-8">
+        <div className="flex flex-col md:flex-row mb-6 md:w-full">
+          <h3 className="text-lg font-medium mb-4">Billing History</h3>
+          <button
+            type="button"
+            className="md:ml-auto w-fit rounded-lg py-2.5 px-4 text-sm font-medium text-[#344054] whitespace-nowrap flex items-center bg-white border"
+          >
+            <img src={download} alt="download icon" className="mr-2" />
+            Download all
+          </button>
+        </div>
+
+        <div className="w-full shadow border rounded-lg">
+          <table className="w-full">
+            <thead>
+              <tr className="w-full">
+                <th className="py-3 text-left w-4/12">Invoice</th>
+                <th className="py-3 text-left">Amount</th>
+                <th className="py-3 text-left hidden md:table-cell">Date</th>
+                <th className="py-3 text-left hidden md:table-cell">Status</th>
+                <th className="py-3 text-left hidden md:table-cell">
+                  Users on plan
+                </th>
+                <th className="py-3 text-left hidden md:table-cell"></th>
+              </tr>
+            </thead>
+            <tbody className="w-full">
+              {tableData.map((data, index) => {
+                return (
+                  <tr className="w-full" key={index}>
+                    <td className="py-6 w-4/12">Basic Plan -{data.invoice}</td>
+                    <td className="py-6">{data.amount}</td>
+                    <td className="py-6 hidden md:table-cell">{data.date}</td>
+                    <td className="py-6 hidden md:table-cell">
+                      <img src={data.status} alt="status" />
+                    </td>
+                    <td className="py-6 hidden md:table-cell">
+                      <img src={data.users} alt="users" />
+                    </td>
+                    <td className="py-6 hidden md:table-cell">
+                      <img src={data.downloadIcon} alt="download" />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   );
 };
